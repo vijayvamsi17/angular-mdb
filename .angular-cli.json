@@ -20,6 +20,9 @@
       "prefix": "app",
       "styles": [
         "../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss",
+        "../node_modules/@fortawesome/fontawesome-free/scss/fa-solid.scss",
+        "../node_modules/@fortawesome/fontawesome-free/scss/fa-brands.scss",
+        "../node_modules/@fortawesome/fontawesome-free/scss/fa-regular.scss",
         "../node_modules/angular-bootstrap-md/scss/bootstrap/bootstrap.scss",
         "../node_modules/angular-bootstrap-md/scss/mdb-free.scss",
         "styles.scss"
