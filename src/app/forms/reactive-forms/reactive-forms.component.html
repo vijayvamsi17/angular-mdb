@@ -1,3 +1,108 @@
-<p>
-  reactive-forms works!
-</p>
+<div class="row justify-content-md-center">
+  <div class="col-6">
+    {{myForm.value | json}}
+    <div class="card">
+      <div class="card-body">
+        <form [formGroup]="myForm" (ngSubmit)="submitForm()">
+          <p class="h5 mb-4">Reactive Form</p>
+
+          <div class="form-group">
+            <label for="title-select">Title:</label>
+            <select class="form-control" id="title-select" formControlName="title">
+              <option value="">--Select--</option>
+              <option value="Mr">Mr</option>
+              <option value="Mrs">Mrs</option>
+              <option value="Dr">Dr</option>
+            </select>
+          </div>
+
+          <div class="md-form">
+            <i class="fa fa-envelope prefix grey-text"></i>
+            <input type="text" formControlName="firstName" id="first-name" class="form-control" mdbInputDirective data-error="First Name is required">
+            <label for="first-name">First Name</label>
+            <!-- <div *ngIf="firstName.invalid && firstName.touched">
+                <p class="text-sm-left">First Name is required.</p>
+            </div> -->
+          </div>
+
+          <div class="md-form">
+            <i class="fa fa-envelope prefix grey-text"></i>
+            <input type="text" formControlName="middleName" id="middle-name" class="form-control" mdbInputDirective>
+            <label for="middle-name">Middle Name</label>
+          </div>
+
+          <div class="md-form">
+            <i class="fa fa-envelope prefix grey-text"></i>
+            <input type="text" formControlName="lastName" id="last-name" class="form-control" mdbInputDirective>
+            <label for="last-name">Last Name</label>
+          </div>
+
+          <div class="md-form">
+            <i class="fa fa-envelope prefix grey-text"></i>
+            <input type="number" formControlName="age" id="user-age" class="form-control" mdbInputDirective>
+            <label for="user-age">Age</label>
+          </div>
+
+          <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input" value="male" formControlName="gender">
+            <label class="custom-control-label" for="customRadioInline1">Male</label>
+          </div>
+          <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input" value="female" formControlName="gender">
+            <label class="custom-control-label" for="customRadioInline2">Female</label>
+          </div>
+
+          <div class="md-form">
+            <i class="fa fa-envelope prefix grey-text"></i>
+            <input type="number" formControlName="email" id="user-email" class="form-control" mdbInputDirective>
+            <label for="user-email">Email</label>
+          </div>
+
+          <div formGroupName="address">
+
+              <div class="md-form">
+                <i class="fa fa-envelope prefix grey-text"></i>
+                <input type="text" formControlName="addressLine1" id="address-Line1" class="form-control" mdbInputDirective>
+                <label for="address-Line1">Address 1</label>
+              </div>
+
+              <div class="md-form">
+                <i class="fa fa-envelope prefix grey-text"></i>
+                <input type="text" formControlName="addressLine2" id="address-Line2" class="form-control" mdbInputDirective>
+                <label for="address-Line2">Address 2</label>
+              </div>
+
+              <div class="md-form">
+                <i class="fa fa-envelope prefix grey-text"></i>
+                <input type="text" formControlName="city" id="address-city" class="form-control" mdbInputDirective>
+                <label for="address-city">City</label>
+              </div>
+
+              <div class="md-form">
+                <i class="fa fa-envelope prefix grey-text"></i>
+                <input type="text" formControlName="state" id="address-state" class="form-control" mdbInputDirective>
+                <label for="address-state">State</label>
+              </div>
+
+              <div class="md-form">
+                <i class="fa fa-envelope prefix grey-text"></i>
+                <input type="text" formControlName="zipCode" id="address-zipCode" class="form-control" mdbInputDirective>
+                <label for="address-zipCode">Zip</label>
+              </div>
+
+          </div>
+
+          <div class="custom-control custom-checkbox my-1 mr-sm-2">
+              <input type="checkbox" class="custom-control-input" id="customControlInline" formControlName="agree">
+              <label class="custom-control-label" for="customControlInline">Are you sure?</label>
+            </div>
+
+            <div class="md-form">
+              <input type="submit" class="btn btn-teal waves-light" [disabled]="!myForm.valid" mdbWavesEffect value="Submit">
+            </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

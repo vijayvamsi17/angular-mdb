@@ -8,8 +8,8 @@
               <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>Forms 
                   <span class="sr-only">(current)</span><span class="caret"></span></a>
                   <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
-                        <a class="dropdown-item waves-light" mdbWavesEffect href="#">Reactive Forms</a>
-                        <a class="dropdown-item waves-light" mdbWavesEffect href="#">Dynamic Forms</a>
+                        <a class="dropdown-item waves-light" mdbWavesEffect href="#">Template Driven Forms</a>
+                        <a class="dropdown-item waves-light" mdbWavesEffect href="#" [routerLink]="['/home/forms/reactive']">Reactive Forms</a>
                     </div>
           </li>
           <li class="nav-item waves-light" mdbWavesEffect>
@@ -50,13 +50,12 @@
   </links>
 </mdb-navbar>
 <!-- Main -->
-<main>
+
   <div class="container">
       <div class="row mt-5 pt-5">
-          <div class="col text-center">
+          <div class="col">
                 <router-outlet></router-outlet>
           </div>
       </div>
   </div>
-</main>
 <!-- /.Main -->
