@@ -10,7 +10,7 @@ const routes: Routes = [
     },{
       path:"home",
       component:HomeComponent,
-      loadChildren: './forms/forms.module#FormsModule'
+      loadChildren: './forms/forms.module#FormsTypeModule'
     },{
       path:"",
       redirectTo:"login",

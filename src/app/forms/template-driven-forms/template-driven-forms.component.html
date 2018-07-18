@@ -1,0 +1,78 @@
+<div class="row justify-content-md-center">
+  <div class="col-6">
+    {{userForm.value | json}}
+    <hr>
+    {{userModle | json}}
+    <div class="card">
+      <div class="card-body">
+          <form #userForm = "ngForm">
+              <p class="h5 mb-4">Template Driven Form</p>
+              <div class="form-group">
+                <label for="first-name">First Name</label>
+                <input type="text" class="form-control" id="first-name" placeholder="First Name" name="firstName" [(ngModel)]="userModle.firstName" #firstName="ngModel" required>
+                <div class="errmsg" *ngIf="firstName.invalid && firstName.touched">
+                    <p>First Name is required</p>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="middle-name">Middle Name</label>
+                <input type="text" class="form-control" id="middle-name" placeholder="Middle Name" name="middleName" [(ngModel)]="userModle.middleName" #middleName="ngModel" required>
+                <div class="errmsg" *ngIf="middleName.invalid && middleName.touched">
+                    <p>Middle Name is required</p>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="last-name">Last Name</label>
+                <input type="text" class="form-control" id="last-name" placeholder="Last Name" name="lastName" [(ngModel)]="userModle.lastName" #lastName="ngModel" required>
+                <div class="errmsg" *ngIf="lastName.invalid && lastName.touched">
+                    <p>Last Name is required</p>
+                </div>
+              </div>
+              <div ngModelGroup="address">
+                  <div class="form-group">
+                    <label for="address-line1">Address 1</label>
+                    <input type="text" class="form-control" id="address-line1" placeholder="Address Line 1" name="address1" [(ngModel)]="userModle.address.address1" #address1="ngModel" required>
+                    <div class="errmsg" *ngIf="address1.invalid && address1.touched">
+                        <p>Address 1 is required</p>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="address-line2">Address 2</label>
+                    <input type="text" class="form-control" id="address-line2" placeholder="Address Line 2" name="address2" [(ngModel)]="userModle.address.address2" #address2="ngModel" required>
+                    <div class="errmsg" *ngIf="address2.invalid && address2.touched">
+                        <p>Address 2 is required</p>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="address-city">City</label>
+                    <input type="text" class="form-control" id="address-city" placeholder="City" name="city" [(ngModel)]="userModle.address.city" #city="ngModel" required>
+                    <div class="errmsg" *ngIf="city.invalid && city.touched">
+                        <p>City is required</p>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="address-state">State</label>
+                    <input type="text" class="form-control" id="address-state" placeholder="State" name="state" [(ngModel)]="userModle.address.state" #state="ngModel" required>
+                    <div class="errmsg" *ngIf="state.invalid && state.touched">
+                        <p>State is required</p>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="address-zip">Zip</label>
+                    <input type="text" class="form-control" id="address-zip" placeholder="Zip" name="zip" [(ngModel)]="userModle.address.zip" #zip="ngModel" required>
+                    <div class="errmsg" *ngIf="zip.invalid && zip.touched">
+                        <p>Zip is required</p>
+                    </div>
+                  </div>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="check-me" name="check" [(ngModel)]="userModle.check" required>
+                <label class="form-check-label" for="check-me">Check me out</label>
+              </div>
+              <button type="submit" [disabled]="userForm.invalid" class="btn btn-primary">Submit</button>
+            </form>
+
+      </div>
+    </div>
+  </div>
+</div>
