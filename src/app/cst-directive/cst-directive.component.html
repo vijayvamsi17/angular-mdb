@@ -1,0 +1,42 @@
+
+<h4 appStructural>Structural Directive</h4>
+
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Brand</th>
+        <th>Model</th>
+        <th>Color</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let x of cars; let i=index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{x.brand}}</td>
+        <td>
+            <span [ngSwitch]="x?.model">
+            <span *ngSwitchCase="'Sedan'">
+                Accord / Camary / Altima
+            </span>
+            <span *ngSwitchCase="'SUV'">
+                Explorer / Highlander / Rogue
+            </span>
+            <span *ngSwitchDefault>
+                Odysse / Quest
+            </span>
+            </span>
+        </td>
+        <td>
+            <span class="redColor" *ngIf="x.color == 'red'">{{x.color}}</span>
+            <span class="greenColor" *ngIf="x.color == 'green'">{{x.color}}</span>
+            <span class="blueColor" *ngIf="x.color == 'blue'">{{x.color}}</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div>
+      <p [appHighlight]="'blue'">This is for attribute directive</p>
+      <p *appCstdir = "isHidden">This is for structural directive</p>
+  </div>

@@ -6,7 +6,7 @@ import { TemplateDrivenFormsComponent } from './template-driven-forms/template-d
 
 const routes: Routes = [
   {
-    path: "forms",
+    path: "",
     component:FormsComponent,
     children:[
     {
@@ -16,10 +16,6 @@ const routes: Routes = [
       path:"templateDriven",
       component:TemplateDrivenFormsComponent
     }]
-  },{
-    path:"",
-    redirectTo:"/home/forms/reactive",
-    pathMatch:"full"
   }
 ];
 
