@@ -13,6 +13,8 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { CstDirectiveComponent } from './cst-directive/cst-directive.component';
+import { CstPipeComponent } from './cst-pipe/cst-pipe.component';
+import { CustDateFormatPipe } from './shared/pipes/cust-date-format.pipe';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { CstDirectiveComponent } from './cst-directive/cst-directive.component';
     LoginComponent,
     HomeComponent,
     CstDirectiveComponent,
-    AttributesDirective
+    AttributesDirective,
+    CstPipeComponent,
+    CustDateFormatPipe
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,13 @@
+<h4>Date Formats:</h4>
+
+<p>Date : {{simpleDate}}</p>
+<p>Date (with PIPE) : {{simpleDate | date}}</p>
+<p>Date (with parameters in PIPE) : {{simpleDate | date:"MM/dd/yyyy"}}</p>
+
+<h4>Chaining PIPE</h4>
+
+<p>Date (with Date and Uppercase pipe) : {{simpleDate | date | uppercase}}</p>
+
+<h4>Custom PIPE</h4>
+
+<p>Day of given date (custom pipe) : {{simpleDate| date}} - {{simpleDate | custDateFormat}}</p>

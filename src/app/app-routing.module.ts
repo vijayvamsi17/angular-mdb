@@ -3,6 +3,7 @@ import { Routes, RouterModule, PreloadAllModules  } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { CstDirectiveComponent } from './cst-directive/cst-directive.component';
+import { CstPipeComponent } from './cst-pipe/cst-pipe.component';
 
 const routes: Routes = [
     {
@@ -13,11 +14,15 @@ const routes: Routes = [
       component:HomeComponent,
       children: [
         { path: "forms", loadChildren: './forms/forms.module#FormsTypeModule' },
-        { path: "cstDirective", component: CstDirectiveComponent }
+        { path: "cstDirective", component: CstDirectiveComponent },
+        { path: "cstPipe", component: CstPipeComponent }
       ]
     },{
       path: "cstDirective",
       component: CstDirectiveComponent
+    },{
+      path: "cstPipe",
+      component: CstPipeComponent
     },{
       path:"",
       redirectTo:"login",
