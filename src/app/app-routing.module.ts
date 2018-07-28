@@ -4,6 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { CstDirectiveComponent } from './cst-directive/cst-directive.component';
 import { CstPipeComponent } from './cst-pipe/cst-pipe.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
     {
@@ -16,7 +17,8 @@ const routes: Routes = [
         { path: "forms", loadChildren: './forms/forms.module#FormsTypeModule' },
         { path: "cstDirective", component: CstDirectiveComponent },
         { path: "cstPipe", component: CstPipeComponent }
-      ]
+      ],
+      canActivate: [AuthGuard]
     },{
       path: "cstDirective",
       component: CstDirectiveComponent

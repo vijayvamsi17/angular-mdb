@@ -15,6 +15,8 @@ import { HomeComponent } from './home/home.component';
 import { CstDirectiveComponent } from './cst-directive/cst-directive.component';
 import { CstPipeComponent } from './cst-pipe/cst-pipe.component';
 import { CustDateFormatPipe } from './shared/pipes/cust-date-format.pipe';
+import { AuthService } from './shared/services/auth.service';
+import { AuthGuard } from './auth.guard';
 
 
 @NgModule({
@@ -36,7 +38,7 @@ import { CustDateFormatPipe } from './shared/pipes/cust-date-format.pipe';
     BrowserAnimationsModule
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
-  providers: [],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
